@@ -1,13 +1,17 @@
 FROM ruby:2.5-alpine
 
-LABEL MAINTAINER=mingalevme@gmail.com
-LABEL org.label-schema.schema-version="1.0"
-LABEL org.label-schema.name="Redis Sentinel health checker"
-LABEL org.label-schema.description="This service is based on Chris Boulton's \
-(https://gist.github.com/chrisboulton) script (https://gist.github.com/chrisboulton/11337032#file-check_sentinel_master_health)"
-LABEL org.label-schema.version="0.9.0"
-LABEL org.label-schema.vcs-url="https://github.com/mingalevme/redis-sentinel-health"
-LABEL org.label-schema.docker.cmd="docker run --rm -e SENTINEL_HOST=localhost -e SENTINEL_HOST=26379 -e SENTINEL_MASTER=mymaster mingalevme/redis-sentinel-health"
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL MAINTAINER=mingalevme@gmail.com \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.name="Redis Sentinel health checker" \
+      org.label-schema.description="This service is based on Chris Boulton's (https://gist.github.com/chrisboulton) script (https://gist.github.com/chrisboulton/11337032#file-check_sentinel_master_health)" \
+      org.label-schema.version="0.9.0" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/mingalevme/redis-sentinel-health" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.docker.cmd="docker run --rm -e SENTINEL_HOST=localhost -e SENTINEL_HOST=26379 -e SENTINEL_MASTER=mymaster mingalevme/redis-sentinel-health"
 
 RUN apk update && apk upgrade && \
     apk add curl wget bash curl-dev build-base && \
