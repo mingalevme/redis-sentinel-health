@@ -16,7 +16,7 @@ docker pull mingalevme/redis-sentinel-health
 
 ```bash
 # Replace environment variables with yours.
-$ docker run --rm -e SENTINEL_HOST=localhost -e SENTINEL_HOST=26379 -e SENTINEL_MASTER=mymaster mingalevme/redis-sentinel-health
+$ docker run --rm mingalevme/redis-sentinel-health -h localhost -p 26379 -m mymaster
 OK - 2/2 slaves healthy. 3/3 sentinels healthy
 $ echo $?
 0
