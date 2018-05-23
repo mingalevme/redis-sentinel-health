@@ -1,6 +1,6 @@
 # redis-sentinel-health
 
-Docker container to monitor a Redis Sentinel environment
+Docker (alpine-based) container to monitor a Redis Sentinel environment
 
 This service is based on [Chris Boulton's](https://gist.github.com/chrisboulton) [script](https://gist.github.com/chrisboulton/11337032#file-check_sentinel_master_health)
 
