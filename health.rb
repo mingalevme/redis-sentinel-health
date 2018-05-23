@@ -81,7 +81,7 @@ def add_info(msg)
 end
 
 def do_exit
-  puts "#{$exit_status.upcase} - #{$results.join('. ')}"
+  puts "#{$exit_status.upcase}. #{$results.join('. ')}."
   exit STATES[$exit_status]
 end
 
@@ -153,8 +153,8 @@ begin
   # assume the local sentinel is healthy
   num_healthy_sentinels += 1
 
-  slave_status    = "#{num_healthy_slaves}/#{num_slaves} slaves healthy"
-  sentinel_status = "#{num_healthy_sentinels}/#{num_sentinels} sentinels healthy"
+  slave_status    = "Slaves: #{num_healthy_slaves}/#{num_slaves} healthy"
+  sentinel_status = "Sentinels: #{num_healthy_sentinels}/#{num_sentinels} healthy"
 
   if options[:min_slaves_crit] != nil and num_slaves <= options[:min_slaves_crit]
     add_state(:critical, "#{num_slaves} known slaves, expected at least #{options[:min_slaves_crit] + 1}")

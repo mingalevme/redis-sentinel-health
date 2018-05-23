@@ -7,7 +7,6 @@ LABEL MAINTAINER=mingalevme@gmail.com \
       org.label-schema.schema-version="1.0" \
       org.label-schema.name="Redis Sentinel health checker" \
       org.label-schema.description="This service is based on Chris Boulton's (https://gist.github.com/chrisboulton) script (https://gist.github.com/chrisboulton/11337032#file-check_sentinel_master_health)" \
-      org.label-schema.version="0.9.0" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/mingalevme/redis-sentinel-health" \
       org.label-schema.vcs-ref=$VCS_REF \
